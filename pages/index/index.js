@@ -4,16 +4,15 @@ Page({
             {
                 id: 'widget',
                 name: '最近',
-                url: 'http://www.baidu.com'
+                url: '/pages/detail/index'
             }
         ]
     },
     kindToggle: function (e) {
         console.log(e);
-        const url = e.currentTarget.dataset.url;
-        console.log(url);
+        const item = e.currentTarget.dataset.item;
         wx.navigateTo({
-            url,
+            url: `${item.url}?id=${item.id}`,
         })
     }
 });
